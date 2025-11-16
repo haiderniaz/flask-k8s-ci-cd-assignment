@@ -3,35 +3,34 @@ name: CI
 on:
   push:
     branches:
-      - '*'
+      - "*"
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: Run flake8 linting
-      run: |
-        pip install flake8
-        flake8 --max-line-length=90 app.py
+      - name: Run flake8 linting
+        run: |
+          pip install flake8
+          flake8 --max-line-length=90 app.py utils.py test_utils.py
 
-    - name: Run pytest
-      run: |
-        pip install pytest
-        pytest
+      - name: Run pytest
+        run: |
+          pip install pytest
+          pytest
 
-    - name: Build Docker image
-      run: |
-        docker build -t flask-app:latest .
-
+      - name: Build Docker image
+        run: |
+          docker build -t flask-app:latest .
