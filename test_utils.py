@@ -1,4 +1,3 @@
-import pytest
 from utils import add_numbers
 
 
@@ -21,4 +20,3 @@ def test_add_numbers_zero():
     """Test adding with zero."""
     assert add_numbers(0, 5) == 5
     assert add_numbers(5, 0) == 5
-
