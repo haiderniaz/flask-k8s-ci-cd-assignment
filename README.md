@@ -383,5 +383,5 @@ This project is part of a Cloud MLOps course assignment.
 
 ## Authors
 
-- Developer: [Your Name]
-- Admin: [Partner Name]
+- Developer: Abdullah Mazhar
+- Admin: Haider Naiz
