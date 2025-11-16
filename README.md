@@ -137,23 +137,10 @@ Ensure Jenkins has access to Docker and kubectl:
 
 ### Step 3: Trigger the Pipeline
 
-**Option A: Manual Trigger**
+**Manual Trigger**
 
 1. Go to the Jenkins job page
 2. Click **Build Now**
-
-**Option B: Automatic Trigger (Webhook)**
-
-1. In Jenkins job configuration, enable **GitHub hook trigger for GITScm polling**
-2. Configure webhook in GitHub repository settings:
-   - URL: `http://your-jenkins-url/github-webhook/`
-   - Content type: `application/json`
-   - Events: Select "Just the push event"
-
-**Option C: Poll SCM**
-
-1. In Jenkins job configuration, enable **Poll SCM**
-2. Set schedule: `H/5 * * * *` (checks every 5 minutes)
 
 ### Step 4: Monitor the Pipeline
 
